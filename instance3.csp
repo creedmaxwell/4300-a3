@@ -1,0 +1,43 @@
+NAME: Sudoku Instance 3 (4x4)
+DESC: 4x4 Sudoku puzzle with 5 given values. Unique solution.
+
+VARS:
+  # Row 1
+  R1C1: [2]
+  R1C2: [1,2,3,4]
+  R1C3: [1,2,3,4]
+  R1C4: [4]
+  # Row 2
+  R2C1: [1,2,3,4]
+  R2C2: [4]
+  R2C3: [1,2,3,4]
+  R2C4: [1,2,3,4]
+  # Row 3
+  R3C1: [1,2,3,4]
+  R3C2: [1,2,3,4]
+  R3C3: [4]
+  R3C4: [1]
+  # Row 4
+  R4C1: [4]
+  R4C2: [1,2,3,4]
+  R4C3: [1,2,3,4]
+  R4C4: [1,2,3,4]
+
+CONS:
+  # Row constraints
+  alldiff(R1C1,R1C2,R1C3,R1C4)
+  alldiff(R2C1,R2C2,R2C3,R2C4)
+  alldiff(R3C1,R3C2,R3C3,R3C4)
+  alldiff(R4C1,R4C2,R4C3,R4C4)
+
+  # Column constraints
+  alldiff(R1C1,R2C1,R3C1,R4C1)
+  alldiff(R1C2,R2C2,R3C2,R4C2)
+  alldiff(R1C3,R2C3,R3C3,R4C3)
+  alldiff(R1C4,R2C4,R3C4,R4C4)
+
+  # 2x2 box constraints
+  alldiff(R1C1,R1C2,R2C1,R2C2)
+  alldiff(R1C3,R1C4,R2C3,R2C4)
+  alldiff(R3C1,R3C2,R4C1,R4C2)
+  alldiff(R3C3,R3C4,R4C3,R4C4)
